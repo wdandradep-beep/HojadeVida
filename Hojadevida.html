@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>William Andrade CV</title>
+
+  <!-- EDITAR TIPOGRAFIA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#eef2f7;
+      color:#1e293b;
+      padding:40px 20px;
+      line-height:1.6;
+    }
+
+    .resume{
+      max-width:1280px;
+      margin:auto;
+      background:#ffffff;
+      border-radius:32px;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:320px 1fr;
+      box-shadow:
+      0 15px 45px rgba(15,23,42,.08);
+    }
+
+    /* ================================= */
+    /* SIDEBAR */
+    /* ================================= */
+
+    .sidebar{
+      background:#f8fafc;
+      border-right:1px solid #dbe3ef;
+      padding:42px 30px;
+    }
+
+    /* EDITAR PERFIL */
+        .profile{
+    margin-bottom:42px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    }
+
+    /* EDITAR FOTO */
+    .photo-placeholder{
+    width:135px;
+    height:150px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:24px;
+    border:3px solid #dbe7ff;
+    box-shadow:
+    0 8px 25px rgba(37,99,235,.10);
+    }
+
+    .photo-placeholder img{
+    width: 100px%;
+    height:110%;
+    object-fit:cover;
+    display:block;
+    }
+
+    /* EDITAR NOMBRE */
+    .profile h1{
+      font-size:30px;
+      line-height:1.1;
+      color:#0f172a;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    /* EDITAR SUBTITULO */
+    .subtitle{
+      font-size:13px;
+      font-weight:700;
+      color:#2563eb;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1.8;
+    }
+
+    .sidebar-section{
+      margin-bottom:36px;
+    }
+
+    .sidebar-title{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#0f172a;
+      margin-bottom:18px;
+      font-weight:800;
+      padding-bottom:10px;
+      border-bottom:1px solid #d7dfeb;
+    }
+
+    .contact-item{
+      font-size:14px;
+      color:#334155;
+      margin-bottom:14px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      word-break:break-word;
+    }
+
+    .sidebar ul{
+      padding-left:18px;
+    }
+
+    .sidebar li{
+      font-size:14px;
+      color:#475569;
+      margin-bottom:10px;
+    }
+
+    /* EDITAR FORTALEZAS */
+    .strength-list{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .strength-item{
+      background:#ffffff;
+      border:1px solid #dbe3ef;
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:13px;
+      color:#475569;
+    }
+
+    /* ================================= */
+    /* MAIN */
+    /* ================================= */
+
+    .main{
+      padding:52px;
+    }
+
+    .main-section{
+      margin-bottom:56px;
+    }
+
+    .main-title{
+      font-size:15px;
+      font-weight:800;
+      color:#0f172a;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin-bottom:26px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .main-title::before{
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:#2563eb;
+      display:block;
+    }
+
+    .main-text{
+      font-size:15px;
+      line-height:2;
+      color:#475569;
+    }
+
+    /* ================================= */
+    /* STACK */
+    /* ================================= */
+
+    .stack-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .stack-card{
+      background:#f8fbff;
+      border:1px solid #d8e5ff;
+      border-radius:22px;
+      padding:24px;
+      transition:.3s ease;
+    }
+
+    .stack-card:hover{
+      transform:translateY(-4px);
+      box-shadow:
+      0 10px 25px rgba(37,99,235,.08);
+    }
+
+    .stack-card h3{
+      font-size:14px;
+      color:#2563eb;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:16px;
+      font-weight:800;
+    }
+
+    .stack-card p{
+      color:#475569;
+      font-size:15px;
+      line-height:1.9;
+    }
+
+    /* ================================= */
+    /* PROYECTOS */
+    /* ================================= */
+
+    .project{
+      margin-bottom:42px;
+    }
+
+    .project h3{
+      font-size:24px;
+      color:#0f172a;
+      margin-bottom:8px;
+    }
+
+    .project-tech{
+      color:#2563eb;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:16px;
+    }
+
+    .project p{
+      font-size:15px;
+      color:#475569;
+      margin-bottom:20px;
+      line-height:1.9;
+    }
+
+    /* EDITAR PREVIEW */
+        .project-preview img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
+        }
+    /* ================================= */
+    /* BOTON */
+    /* ================================= */
+
+    .portfolio-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:15px 24px;
+      border-radius:16px;
+      background:#2563eb;
+      color:#ffffff;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      margin-top:24px;
+      transition:.3s ease;
+    }
+
+    .portfolio-button:hover{
+      transform:translateY(-3px);
+      background:#1d4ed8;
+    }
+
+    /* ================================= */
+    /* EXPERIENCIA */
+    /* ================================= */
+
+    .experience{
+      margin-bottom:42px;
+    }
+
+    .experience h3{
+      font-size:22px;
+      color:#0f172a;
+      margin-bottom:6px;
+    }
+
+    .experience-company{
+      font-size:14px;
+      color:#2563eb;
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    .experience ul{
+      padding-left:18px;
+    }
+
+    .experience li{
+      margin-bottom:12px;
+      color:#475569;
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    /* ================================= */
+    /* REFERENCIAS */
+    /* ================================= */
+
+    .reference-text{
+      color:#475569;
+      font-size:15px;
+      line-height:1.9;
+    }
+
+    /* ================================= */
+    /* RESPONSIVE */
+    /* ================================= */
+
+    @media(max-width:980px){
+
+      .resume{
+        grid-template-columns:1fr;
+      }
+
+      .sidebar{
+        border-right:none;
+        border-bottom:1px solid #dbe3ef;
+      }
+
+      .main{
+        padding:36px 28px;
+      }
+
+      .stack-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="resume">
+
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
+
+    <aside class="sidebar">
+
+      <!-- EDITAR PERFIL -->
+      <div class="profile">
+
+        <!-- EDITAR FOTO -->
+         <div class="photo-placeholder">
+
+        <!-- EDITAR FOTO -->
+        <img src="imagenes/fotohv.png">
+
+        </div>
+        <!-- EDITAR NOMBRE -->
+        <h1>
+          William David Andrade Pereira
+        </h1>
+
+        <!-- EDITAR SUBTITULO -->
+        <p class="subtitle">
+          IT SUPPORT | SYSTEMS STUDENT | FRONTEND DEVELOPMENT
+        </p>
+
+      </div>
+
+      <!-- EDITAR CONTACTO -->
+      <section class="sidebar-section">
+
+        <h2 class="sidebar-title">
+          Contacto
+        </h2>
+
+        <div class="contact-item">
+          📞 320 893 6983
+        </div>
+
+        <div class="contact-item">
+          ✉️ wdandradep@gmail.com
+        </div>
+
+        <div class="contact-item">
+          📍 Bogotá, Colombia
+        </div>
+
+        <div class="contact-item">
+          💼 linkedin.com/in/wdandradep
+        </div>
+
+        <div class="contact-item">
+          💻 github.com/wdandradep-beep
+        </div>
+
+      </section>
+
+      <!-- EDITAR EDUCACION -->
+      <section class="sidebar-section">
+
+        <h2 class="sidebar-title">
+          Educación
+        </h2>
+
+        <ul>
+          <li>Ingeniería de Sistemas — Octavo semestre</li>
+          <li>Técnico en Programación de Software — SENA</li>
+        </ul>
+
+      </section>
+
+      <!-- EDITAR IDIOMAS -->
+      <section class="sidebar-section">
+
+        <h2 class="sidebar-title">
+          Idiomas
+        </h2>
+
+        <ul>
+          <li>Español — Nativo</li>
+          <li>Inglés — B1 Profesional / Intermedio</li>
+        </ul>
+
+      </section>
+
+      <!-- EDITAR CERTIFICACIONES -->
+      <section class="sidebar-section">
+
+        <h2 class="sidebar-title">
+          Certificaciones
+        </h2>
+
+        <ul>
+          <li>Análisis Exploratorio de Datos con Python — SENA</li>
+          <li>Excel Intermedio Aplicado a los Negocios — SENA</li>
+          <li>Email Marketing — Coursera</li>
+          <li>Facebook Ads — Google</li>
+        </ul>
+
+      </section>
+
+      <!-- EDITAR FORTALEZAS -->
+      <section class="sidebar-section">
+
+        <h2 class="sidebar-title">
+          Fortalezas
+        </h2>
+
+        <div class="strength-list">
+
+          <div class="strength-item">
+            Resolución de problemas y troubleshooting
+          </div>
+
+          <div class="strength-item">
+            Aprendizaje rápido y adaptación tecnológica
+          </div>
+
+          <div class="strength-item">
+            Comunicación técnica y estructurada
+          </div>
+
+          <div class="strength-item">
+            Atención al detalle y experiencia visual
+          </div>
+
+          <div class="strength-item">
+            Trabajo interdisciplinario y colaborativo
+          </div>
+
+        </div>
+
+      </section>
+
+    </aside>
+
+    <!-- ================================= -->
+    <!-- MAIN -->
+    <!-- ================================= -->
+
+    <main class="main">
+
+      <!-- EDITAR PERFIL PROFESIONAL -->
+      <section class="main-section">
+
+        <h2 class="main-title">
+          Perfil Profesional
+        </h2>
+
+        <p class="main-text">
+          Estudiante de octavo semestre de Ingeniería de Sistemas con experiencia en soporte a usuarios, plataformas digitales y entornos B2B/B2C. Experiencia en resolución de incidencias, gestión de usuarios y herramientas SaaS como Salesforce y HubSpot.
+          <br><br>
+          Actualmente enfocado en desarrollo web y soluciones digitales, con conocimientos en JavaScript, React, Next.js, APIs REST, SQL y frontend moderno. He desarrollado proyectos propios orientados a dashboards administrativos, autenticación, control de roles y experiencias visuales enfocadas en usabilidad y organización.
+          <br><br>
+          Me caracterizo por la capacidad de aprendizaje rápido, adaptación tecnológica y comunicación efectiva, buscando continuar creciendo profesionalmente dentro del sector tecnológico y desarrollo de soluciones digitales.
+        </p>
+
+      </section>
+
+      <!-- EDITAR STACK -->
+      <section class="main-section">
+
+        <h2 class="main-title">
+          Stack Técnico
+        </h2>
+
+        <div class="stack-grid">
+
+          <div class="stack-card">
+
+            <h3>
+              Soporte & SaaS
+            </h3>
+
+            <p>
+              Salesforce<br>
+              HubSpot<br>
+              Jira<br>
+              Slack<br>
+              Freshchat
+            </p>
+
+          </div>
+
+          <div class="stack-card">
+
+            <h3>
+              Frontend & Desarrollo
+            </h3>
+
+            <p>
+              JavaScript<br>
+              React / Next.js<br>
+              Tailwind CSS<br>
+              HTML / CSS
+            </p>
+
+          </div>
+
+          <div class="stack-card">
+
+            <h3>
+              Datos & Backend
+            </h3>
+
+            <p>
+              SQL<br>
+              Python<br>
+              APIs REST<br>
+              CRUD
+            </p>
+
+          </div>
+
+          <div class="stack-card">
+
+            <h3>
+              Diseño & Multimedia
+            </h3>
+
+            <p>
+              Photoshop<br>
+              Premiere Pro<br>
+              Canva<br>
+              IA Generativa
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- EDITAR PROYECTOS -->
+      <section class="main-section">
+
+        <h2 class="main-title">
+          Proyectos Tecnológicos
+        </h2>
+
+        <!-- EDITAR CALMA -->
+        <div class="project">
+
+          <h3>
+            CALMA – Sistema de Gestión de Tareas
+          </h3>
+
+          <div class="project-tech">
+            React • Next.js • SQL • APIs REST • Tailwind
+          </div>
+
+          <p>
+            Plataforma web con autenticación, control de roles, dashboard administrativo y CRUD completo de tareas y usuarios.
+          </p>
+
+          <!-- EDITAR IMAGEN -->
+            <div class="project-preview">
+
+            <!-- EDITAR IMAGEN CALMA -->
+            <div class="project-preview">
+
+        <!-- EDITAR IMAGEN CALMA -->
+        <img src="imagenes/calma1.png" alt="Proyecto CALMA">
+
+        </div>
+        <!-- EDITAR VANTI -->
+        <div class="project">
+
+          <h3>
+            Vanti Clone
+          </h3>
+
+          <div class="project-tech">
+            Next.js • Tailwind CSS • UI/UX
+          </div>
+
+          <p>
+            Clon frontend pixel-perfect enfocado en diseño responsivo, componentes reutilizables y experiencia visual moderna.
+          </p>
+
+          <!-- EDITAR IMAGEN -->
+          <div class="project-preview">
+
+            <!-- EDITAR IMAGEN VANTI -->
+            <img src="imagenes/vanti1.png" alt="Proyecto Vanti">
+
+            </div>
+
+        </div>
+
+      </section>
+
+      <!-- EDITAR MULTIMEDIA -->
+      <section class="main-section">
+
+        <h2 class="main-title">
+          Multimedia & Digital Projects
+        </h2>
+
+        <p class="main-text">
+          Desarrollo de presentaciones visuales, contenido multimedia, edición audiovisual y propuestas digitales enfocadas en identidad visual, herramientas creativas y comunicación digital.
+        </p>
+
+        <!-- EDITAR BOTON -->
+        <a
+          href="https://canva.link/ax3aed9f372o3cp"
+          target="_blank"
+          class="portfolio-button"
+        >
+          Ver Portafolio Multimedia
+        </a>
+
+      </section>
+
+      <!-- EDITAR EXPERIENCIA -->
+      <section class="main-section">
+
+        <h2 class="main-title">
+          Experiencia Profesional
+        </h2>
+
+        <!-- EDITAR DALTON -->
+        <div class="experience">
+
+          <h3>
+            Teaching & Digital Learning Experience
+          </h3>
+
+          <div class="experience-company">
+            Dalton Academy | Jun 2024 – Jul 2025
+          </div>
+
+          <ul>
+            <li>Clases virtuales para grupos de más de 90 estudiantes en procesos de preparación académica.</li>
+
+            <li>Implementación de metodologías activas como gamificación, ABP y herramientas de IA para optimización del aprendizaje.</li>
+
+            <li>Desarrollo de actividades digitales, organización de contenidos y comunicación estructurada en entornos virtuales.</li>
+
+            <li>Incremento aproximado de 11 puntos en promedio general de resultados académicos durante el periodo de enseñanza.</li>
+          </ul>
+
+        </div>
+
+        <!-- EDITAR XTENDO -->
+        <div class="experience">
+
+          <h3>
+            Customer & Partner Experience
+          </h3>
+
+          <div class="experience-company">
+            Xtendo Group | May 2021 – Mar 2024
+          </div>
+
+          <ul>
+            <li>Soporte a usuarios y clientes latinoamericanos en plataformas digitales B2B/B2C.</li>
+
+            <li>Resolución de incidencias y gestión de solicitudes mediante Salesforce.</li>
+
+            <li>Optimización de procesos de atención y seguimiento de casos técnicos y operativos.</li>
+
+            <li>Colaboración con equipos internos para mejorar experiencia y flujo operativo de usuarios.</li>
+          </ul>
+
+        </div>
+
+        <!-- EDITAR MARKETLOGIC -->
+        <div class="experience">
+
+          <h3>
+            Lead Development Representative
+          </h3>
+
+          <div class="experience-company">
+            Marketlogic SAS | Ago 2021 – Dic 2021
+          </div>
+
+          <ul>
+            <li>Gestión y calificación de leads para soluciones tecnológicas B2B.</li>
+
+            <li>Uso de metodologías BANT y CRM para seguimiento de oportunidades comerciales.</li>
+
+            <li>Comunicación con clientes corporativos y acompañamiento en procesos de prospección digital.</li>
+          </ul>
+
+        </div>
+
+      </section>
+
+      <!-- EDITAR REFERENCIAS -->
+      <section class="main-section">
+
+        <h2 class="main-title">
+          Referencias
+        </h2>
+
+        <p class="reference-text">
+          Referencias profesionales y laborales disponibles y podrán ser suministradas según los requerimientos del proceso.
+        </p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
